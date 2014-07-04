@@ -1,4 +1,2 @@
-rbt-ls
-======
-
-The definitive app for social media managing
+# rbt-ls
+### a Sails application
