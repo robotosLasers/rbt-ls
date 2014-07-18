@@ -2,16 +2,24 @@
 
 function __autoload($class_name)
 {
+    $file = null;
+    $dummy = str_replace('_', '/', substr($class_name, 1));
+    
     if (substr($class_name, 0, 1) == '_'){
-        $class_name = 'modules/Celebmor/' . str_replace('_', '/', substr($class_name, 1)) . '.php';
+        $file = '/modules/celebmor/' . $dummy . '.php';
     } else {
-        $class_name = 'modules/App/' . str_replace('_', '/', $class_name) . '.php';
+        $file = '/modules/app/' . $dummy . '.php';
     }
 
-    if (file_exists($class_name)){
-        include $class_name;
+    if (file_exists($file)){
+        include $file;
     } else {
-        throw new Exception(EXCEPTION_INVALID_CLASS_NAME);
+        $file = '/modules/' . $dummy . '.php';
+        if (file_exists($file)){
+            include $file;
+            return 0;
+        }
+        throw new Exception(EXCEPTION_INVALID_CLASS_NAME . ' ' . $class_name);
     }
 
 }

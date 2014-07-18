@@ -10,7 +10,7 @@ class _RequestManager
     private static function checkController($controller)
     {
         $result = null;
-        if(file_exists(sprintf('/modules/App/controllers/%s.php', $controller)))
+        if(file_exists(sprintf('/modules/app/controllers/%s.php', $controller)))
         {
             
         }

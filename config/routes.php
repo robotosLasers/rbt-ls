@@ -1,5 +1,5 @@
 <?php
-$GLOBALS['routes'] = [
+$GLOBALS['config']['routes'] = [
     'static'=> [],
     'error' => ['404' => '', '500' => '']
     ];
