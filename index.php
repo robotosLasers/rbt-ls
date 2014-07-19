@@ -10,7 +10,7 @@ include 'config/routes.php';
 /// Process action
 /// Render JSON
 try{
-    _RequestManager::router();
+    $controller = _RequestManager::getController();
 } catch (Exception $exc){
     echo $exc->getMessage();
 }
