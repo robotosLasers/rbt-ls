@@ -10,7 +10,6 @@ composer.lock
 vendor/bin
 # Composer files
 composer.phar
-vendor/
 # Local configs
 config/autoload/*.local.php
 # Binary gettext files
